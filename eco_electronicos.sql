@@ -28,7 +28,7 @@ CREATE TABLE solicitudes_retiros (
 CREATE TABLE solicitudes_articulos (
   id_solicitud INT NOT NULL,
   id_articulo INT NOT NULL,
-  cantidad_articulo INT NOT NULL CHECK (cantidad > 0),
+  cantidad_articulo INT NOT NULL CHECK (cantidad_articulo > 0),
   PRIMARY KEY (id_solicitud, id_articulo),
   FOREIGN KEY (id_solicitud) REFERENCES solicitudes_retiros(id_solicitud),
   FOREIGN KEY (id_articulo) REFERENCES articulos_reciclados(id_articulo)
@@ -38,7 +38,7 @@ CREATE TABLE vehiculos (
   id_vehiculo INT AUTO_INCREMENT PRIMARY KEY,
   patente_vehiculo VARCHAR(10) NOT NULL UNIQUE,
   modelo_vehiculo VARCHAR(50) NOT NULL,
-  capacidad_vehiculo INT NOT NULL CHECK (capacidad > 0),
+  capacidad_vehiculo INT NOT NULL CHECK (capacidad_vehiculo > 0),
   disponibilidad_vehiculo BOOLEAN NOT NULL DEFAULT TRUE
 );
 
