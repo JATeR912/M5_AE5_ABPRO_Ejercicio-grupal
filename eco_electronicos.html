@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECO-ELECTRÓNICOS | Sistema de Gestión</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="text-center text-white p-4" style="background-color: #2e7d32;">
+    <h1>ECO-ELECTRÓNICOS</h1>
+    <p>Reciclaje responsable de artículos electrónicos</p>
+  </header>
+
+  <section id="informacion" class="container my-5 p-5 shadow rounded bg-white">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      En <strong>ECO-ELECTRÓNICOS</strong> promovemos el reciclaje sustentable de artículos electrónicos. 
+      Brindamos un servicio gratuito de retiro a domicilio y garantizamos un manejo responsable de los desechos 
+      tecnológicos, contribuyendo a un planeta más limpio.
+    </p>
+  </section>
+
+  <section id="formulario" class="container my-5 p-5 shadow rounded bg-white">
+    <h2>Agendar Retiro de Artículos</h2>
+    <form id="formRetiro">
+
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ej: María Torres" required>
+
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" placeholder="Ej: Calle 123, Ciudad" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Ej: +56 9 1234 5678" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" placeholder="Ej: maria@email.com" required>
+
+      <label for="articulo">Tipo de artículo:</label>
+      <select id="articulo" name="articulo" required>
+        <option value="">Seleccione...</option>
+        <option value="Celular">Celular</option>
+        <option value="Computador">Computador</option>
+        <option value="Televisor">Televisor</option>
+        <option value="Impresora">Impresora</option>
+        <option value="Otros">Otros</option>
+      </select>
+
+      <label for="fecha">Fecha de retiro deseada:</label>
+      <input type="date" id="fecha" name="fecha" required min="2025-11-20">
+
+      <label for="comentarios">Comentarios adicionales:</label>
+      <textarea id="comentarios" name="comentarios" rows="3" placeholder="Ej: Retiro después de las 17:00 hrs"></textarea>
+
+      <button type="submit">Enviar Solicitud</button>
+
+    </form>
+
+    <div id="mensaje">✅ ¡Solicitud enviada correctamente! Nos contactaremos contigo pronto.</div>
+  </section>
+
+  <section id="registros" class="container my-5 p-5 shadow rounded bg-white">
+    <h2>Registros de Reciclajes Realizados</h2>
+    
+    <table class="table table-bordered text-center">
+      <thead class="text-white" style="background-color:#2e7d32;">
+        <tr>
+          <th>ID Solicitud</th>
+          <th>Cliente</th>
+          <th>Artículo</th>
+          <th>Fecha Retiro</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>María Torres</td>
+          <td>Computador</td>
+          <td>2025-10-15</td>
+          <td>Completada</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Juan Pérez</td>
+          <td>Televisor</td>
+          <td>2025-10-18</td>
+          <td>En Proceso</td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>Ana Gómez</td>
+          <td>Celular</td>
+          <td>2025-10-20</td>
+          <td>Pendiente</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="text-center text-white p-3" style="background-color:#2e7d32;">
+    <p>© 2025 ECO-ELECTRÓNICOS | Modulo_5_AE5</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('formRetiro');
+    const mensaje = document.getElementById('mensaje');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const fechaInput = document.getElementById('fecha').value;
+      const fechaSeleccionada = new Date(fechaInput);
+
+      const hoy = new Date();
+      hoy.setHours(0, 0, 0, 0);
+
+      if (fechaSeleccionada <= hoy) {
+        alert("❗ La fecha debe ser posterior a la fecha actual.");
+        return;
+      }
+
+      mensaje.style.display = 'block';
+      form.reset();
+
+      setTimeout(() => {
+        mensaje.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>

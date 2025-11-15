@@ -1,0 +1,72 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+/* FORMULARIO */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* BOTÓN */
+button {
+    background-color: #43a047;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+/* TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+
+/* MENSAJE */
+#mensaje {
+    display: none;
+    background-color: #c8e6c9;
+    color: #256029;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #81c784;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
