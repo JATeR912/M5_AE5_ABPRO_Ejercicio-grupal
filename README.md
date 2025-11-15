@@ -39,7 +39,7 @@ Las tablas principales son:
 
 El repositorio contiene los siguientes archivos clave:
  
-
+```bash
 .
 ├── assets/
 │ └── css/
@@ -49,6 +49,7 @@ El repositorio contiene los siguientes archivos clave:
 ├── eco_electronicos.html
 ├── eco_electronicos.sql
 └── README.md
+```
     
 ## 🚀 Puesta en Marcha
 
